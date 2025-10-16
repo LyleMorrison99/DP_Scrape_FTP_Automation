@@ -1,0 +1,13 @@
+requests
+pandas
+bs4
+pathlib
+time
+datetime
+mysql.connector
+os
+numpy
+pymysql
+ftplib
+io
+json
