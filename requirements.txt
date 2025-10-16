@@ -1,12 +1,6 @@
 requests
 pandas
 bs4
-pathlib
-datetime
 mysql.connector
-os
 numpy
 pymysql
-ftplib
-io
-json
