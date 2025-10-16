@@ -136,18 +136,31 @@ CREATE TABLE IF NOT EXISTS nflfantasy_weekly_projections (
 cursor.execute(create_table_query)
 
 # Insert data into MySQL
-for _, row in nfl_df.iterrows():
     query = """
     INSERT IGNORE INTO nflfantasy_weekly_projections (PlayerName, Opp, Points, Timestamp, PlayerDateKey)
     VALUES (%s, %s, %s, %s, %s);
     """
-    cursor.execute(query, tuple(row))
 
-print("inserting data into table..")
+# Build list of tuples in correct order
+data = [
+    (
+        row['PlayerName'],
+        row['Opp'],
+        row['Points'],
+        row['Timestamp'],
+        row['PlayerDateKey']
+    )
+    for _, row in nfl_df.iterrows()
+]
+
+# Bulk insert
+if data:
+    cursor.executemany(query, data)
+    db.commit()
+    print(f"Inserted {cursor.rowcount} rows into nflfantasy_weekly_projections.")
 
 
 
-db.commit()
 cursor.close()
 db.close()
 
