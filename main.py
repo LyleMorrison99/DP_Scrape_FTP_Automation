@@ -136,10 +136,10 @@ CREATE TABLE IF NOT EXISTS nflfantasy_weekly_projections (
 cursor.execute(create_table_query)
 
 # Insert data into MySQL
-    query = """
-    INSERT IGNORE INTO nflfantasy_weekly_projections (PlayerName, Opp, Points, Timestamp, PlayerDateKey)
-    VALUES (%s, %s, %s, %s, %s);
-    """
+query = """
+INSERT IGNORE INTO nflfantasy_weekly_projections (PlayerName, Opp, Points, Timestamp, PlayerDateKey)
+VALUES (%s, %s, %s, %s, %s);
+"""
 
 # Build list of tuples in correct order
 data = [
