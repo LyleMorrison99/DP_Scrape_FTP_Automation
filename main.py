@@ -283,7 +283,8 @@ db = mysql.connector.connect(
     host= "giowm1136.siteground.biz",
     user = "ur2n2kkxdd6uc",
     password = "g71__m1c3<m5",
-    database = "dbhutvbrbdxm0c"   
+    database = "dbhutvbrbdxm0c",
+    ssl_disabled=False   
 )
 
 cursor = db.cursor()
@@ -389,7 +390,8 @@ db = mysql.connector.connect(
     host= "giowm1136.siteground.biz",
     user = "ur2n2kkxdd6uc",
     password = "g71__m1c3<m5",
-    database = "dbhutvbrbdxm0c"   
+    database = "dbhutvbrbdxm0c",
+    ssl_disabled=False   
 )
 
 cursor = db.cursor()
@@ -515,7 +517,8 @@ db = mysql.connector.connect(
     host= "giowm1136.siteground.biz",
     user = "ur2n2kkxdd6uc",
     password = "g71__m1c3<m5",
-    database = "dbhutvbrbdxm0c"   
+    database = "dbhutvbrbdxm0c",
+    ssl_disabled=False   
 )
 
 cursor = db.cursor()
@@ -570,7 +573,8 @@ mysql_config = {
     'user': 'ur2n2kkxdd6uc',
     'password': 'g71__m1c3<m5',
     'database': 'dbhutvbrbdxm0c',
-    'port': 3306
+    'port': 3306,
+    ssl_disabled=False
 }
 
 view_name = 'vw_latest_weekly_projections'  # the MySQL view you want to fetch
