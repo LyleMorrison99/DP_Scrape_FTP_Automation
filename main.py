@@ -121,7 +121,6 @@ db = mysql.connector.connect(
     user = "ur2n2kkxdd6uc",
     password = "g71__m1c3<m5",
     database = "dbhutvbrbdxm0c",
-    ssl_disabled=False,
     get_server_public_key=True
 )
 
@@ -285,7 +284,6 @@ db = mysql.connector.connect(
     user = "ur2n2kkxdd6uc",
     password = "g71__m1c3<m5",
     database = "dbhutvbrbdxm0c",
-    ssl_disabled=False,
     get_server_public_key=True
 )
 
@@ -393,7 +391,6 @@ db = mysql.connector.connect(
     user = "ur2n2kkxdd6uc",
     password = "g71__m1c3<m5",
     database = "dbhutvbrbdxm0c",
-    ssl_disabled=False,
     get_server_public_key=True
 )
 
@@ -521,7 +518,6 @@ db = mysql.connector.connect(
     user = "ur2n2kkxdd6uc",
     password = "g71__m1c3<m5",
     database = "dbhutvbrbdxm0c",
-    ssl_disabled=False,
     get_server_public_key=True
 )
 
@@ -578,7 +574,6 @@ mysql_config = {
     'password': 'g71__m1c3<m5',
     'database': 'dbhutvbrbdxm0c',
     'port': 3306,
-    ssl_disabled=False,
     get_server_public_key=True
 }
 
