@@ -1,3 +1,7 @@
+#master scrape workflow
+
+#NFL FANTASY SCRAPE
+
 print("Importing libraries...")
 
 import requests
@@ -136,31 +140,18 @@ CREATE TABLE IF NOT EXISTS nflfantasy_weekly_projections (
 cursor.execute(create_table_query)
 
 # Insert data into MySQL
-query = """
-INSERT IGNORE INTO nflfantasy_weekly_projections (PlayerName, Opp, Points, Timestamp, PlayerDateKey)
-VALUES (%s, %s, %s, %s, %s);
-"""
+for _, row in nfl_df.iterrows():
+    query = """
+    INSERT IGNORE INTO nflfantasy_weekly_projections (PlayerName, Opp, Points, Timestamp, PlayerDateKey)
+    VALUES (%s, %s, %s, %s, %s);
+    """
+    cursor.execute(query, tuple(row))
 
-# Build list of tuples in correct order
-data = [
-    (
-        row['PlayerName'],
-        row['Opp'],
-        row['Points'],
-        row['Timestamp'],
-        row['PlayerDateKey']
-    )
-    for _, row in nfl_df.iterrows()
-]
-
-# Bulk insert
-if data:
-    cursor.executemany(query, data)
-    db.commit()
-    print(f"Inserted {cursor.rowcount} rows into nflfantasy_weekly_projections.")
+print("inserting data into table..")
 
 
 
+db.commit()
 cursor.close()
 db.close()
 
@@ -644,9 +635,13 @@ print("Converting to JSON...")
 try:
     # Convert DataFrame to a list of dicts
     records = json.loads(df.to_json(orient='records'))
+    json_structure = {
+        "current_week": week,
+        "players": records
+    }
     
     # Pretty-print JSON with indentation
-    pretty_json = json.dumps({"players": records}, indent=2, ensure_ascii=False)
+    pretty_json = json.dumps(json_structure, indent=2, ensure_ascii=False)
 except Exception as e:
     print(f"❌ Error converting to JSON: {e}")
     exit(1)
@@ -671,3 +666,4 @@ except Exception as e:
     exit(1)
 
 print("Workflow Complete")
+
