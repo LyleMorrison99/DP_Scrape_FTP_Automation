@@ -118,10 +118,10 @@ nfl_df = nfl_df.drop_duplicates(subset=['PlayerDateKey'])
 
 db = mysql.connector.connect(
     host= "giowm1136.siteground.biz",
-    user = "ur2n2kkxdd6uc",
-    password = "g71__m1c3<m5",
-    database = "dbhutvbrbdxm0c",
-    get_server_public_key=True
+    user = "u2559-gbw05rhpdjyg",
+    password = "GOredSOX2014?",
+    port="18765",
+    database = "dbhutvbrbdxm0c"
 )
 
 cursor = db.cursor()
@@ -281,10 +281,10 @@ final_df = final_df.drop_duplicates(subset=['PlayerDateKey'])
 
 db = mysql.connector.connect(
     host= "giowm1136.siteground.biz",
-    user = "ur2n2kkxdd6uc",
-    password = "g71__m1c3<m5",
-    database = "dbhutvbrbdxm0c",
-    get_server_public_key=True
+    user = "u2559-gbw05rhpdjyg",
+    password = "GOredSOX2014?",
+    port="18765",
+    database = "dbhutvbrbdxm0c"
 )
 
 cursor = db.cursor()
@@ -388,10 +388,10 @@ sl_df  = sl_df .drop_duplicates(subset=['PlayerDateKey'])
 
 db = mysql.connector.connect(
     host= "giowm1136.siteground.biz",
-    user = "ur2n2kkxdd6uc",
-    password = "g71__m1c3<m5",
-    database = "dbhutvbrbdxm0c",
-    get_server_public_key=True
+    user = "u2559-gbw05rhpdjyg",
+    password = "GOredSOX2014?",
+    port="18765",
+    database = "dbhutvbrbdxm0c"
 )
 
 cursor = db.cursor()
@@ -515,10 +515,10 @@ slp_df = slp_df.where(pd.notnull(slp_df), None)
 
 db = mysql.connector.connect(
     host= "giowm1136.siteground.biz",
-    user = "ur2n2kkxdd6uc",
-    password = "g71__m1c3<m5",
-    database = "dbhutvbrbdxm0c",
-    get_server_public_key=True
+    user = "u2559-gbw05rhpdjyg",
+    password = "GOredSOX2014?",
+    port="18765",
+    database = "dbhutvbrbdxm0c"
 )
 
 cursor = db.cursor()
@@ -569,12 +569,12 @@ print("Beginning FTP upload...")
 # MySQL configuration
 # -----------------------------
 mysql_config = {
-    'host': 'giowm1136.siteground.biz',
-    'user': 'ur2n2kkxdd6uc',
-    'password': 'g71__m1c3<m5',
-    'database': 'dbhutvbrbdxm0c',
-    'port': 3306,
-    get_server_public_key=True
+    host= "giowm1136.siteground.biz",
+    user = "u2559-gbw05rhpdjyg",
+    password = "GOredSOX2014?",
+    port="18765",
+    database = "dbhutvbrbdxm0c"
+    
 }
 
 view_name = 'vw_latest_weekly_projections'  # the MySQL view you want to fetch
