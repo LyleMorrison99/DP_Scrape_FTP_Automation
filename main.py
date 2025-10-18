@@ -120,7 +120,8 @@ db = mysql.connector.connect(
     host= "giowm1136.siteground.biz",
     user = "ur2n2kkxdd6uc",
     password = "g71__m1c3<m5",
-    database = "dbhutvbrbdxm0c"   
+    database = "dbhutvbrbdxm0c",
+    ssl_disabled=False   
 )
 
 cursor = db.cursor()
